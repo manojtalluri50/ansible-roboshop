@@ -36,7 +36,7 @@
       dest: /app 
       remote_src: yes
 
-  - name: Install dependencies
+  - name: install dependencies
     community.general.npm:
       path: /app
 
@@ -54,3 +54,13 @@
       name: catalogue
       state: started
       enabled: yes
+
+  - name: copy mongodb repo
+    ansible.builtin.copy:
+      src: mongo.repo
+      dest: /etc/yum.repos.d/mongo.repo
+
+  - name: install mongodb client
+    ansible.builtin.dnf:
+      name: mongodb-mongosh
+      state: present
