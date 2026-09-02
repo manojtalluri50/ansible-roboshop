@@ -60,7 +60,7 @@
       name: mysql
       state: installed
 
-  - name: Collect all possible information using passwordless root access
+  - name: connect to mysql using app user
     ansible.mysql.mysql_info:
       login_user: shipping
       login_password: RoboShop@1
