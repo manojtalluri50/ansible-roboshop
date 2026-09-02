@@ -75,7 +75,7 @@
   #     login_host: mysql.daws84s.online
   #     login_db: cities
 
-  - name: connect to mysql using app user
+  - name: import data
     community.mysql.mysql_db:
       name: all
       login_user: root
